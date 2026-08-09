@@ -3,8 +3,14 @@ import Link from "next/link";
 import { site } from "@/lib/site";
 
 export const metadata: Metadata = {
-  title: "Nosotros",
-  description: `Conoce a ${site.legalName}: tecnología con acompañamiento real.`,
+  title: "Nosotros | Empresa de tecnología en Venezuela",
+  description: `Conoce a ${site.legalName}: socio tecnológico para desarrollo de software, infraestructura y soporte TI con acompañamiento real.`,
+  alternates: { canonical: "/nosotros" },
+  openGraph: {
+    title: `Nosotros | ${site.name}`,
+    description: `Conoce a ${site.legalName} y nuestro enfoque en tecnología con resultados.`,
+    url: "/nosotros",
+  },
 };
 
 export default function NosotrosPage() {

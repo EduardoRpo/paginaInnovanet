@@ -60,7 +60,7 @@ export function Footer() {
         <span>
           © {year} {site.legalName}
         </span>
-        <span>innovannet</span>
+        <span>{site.domain}</span>
       </div>
     </footer>
   );

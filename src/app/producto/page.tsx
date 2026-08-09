@@ -4,8 +4,14 @@ import { ProductShowcase } from "@/components/Icons";
 import { site } from "@/lib/site";
 
 export const metadata: Metadata = {
-  title: "Producto",
+  title: `${site.product.name} | Software empresarial`,
   description: site.product.summary,
+  alternates: { canonical: "/producto" },
+  openGraph: {
+    title: `${site.product.name} | Innovanet`,
+    description: site.product.summary,
+    url: "/producto",
+  },
 };
 
 export default function ProductoPage() {
@@ -39,6 +45,14 @@ export default function ProductoPage() {
             <div className="btn-row" style={{ marginTop: "0.5rem" }}>
               <a
                 className="btn btn--primary"
+                href={site.appUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Entrar a la plataforma
+              </a>
+              <a
+                className="btn btn--ghost"
                 href={`${site.whatsapp.url}?text=${encodeURIComponent(
                   `Hola Innovanet, me interesa conocer más sobre ${site.product.name}.`
                 )}`}
@@ -47,9 +61,6 @@ export default function ProductoPage() {
               >
                 Solicitar demo por WhatsApp
               </a>
-              <Link className="btn btn--ghost" href="/servicios">
-                Ver también servicios
-              </Link>
             </div>
           </div>
           <ProductShowcase />

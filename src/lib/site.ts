@@ -1,10 +1,23 @@
 export const site = {
   name: "Innovanet",
   legalName: "Innovanet 2026, C.A.",
-  domain: "innovannet",
+  domain: "innovannet.com",
+  url: "https://innovannet.com",
+  appUrl: "https://app.innovannet.com",
   tagline: "Tu socio tecnológico para crecer",
   description:
-    "Desarrollo de software, soporte TI, redes, servidores, consultoría y capacitaciones.",
+    "Innovanet: desarrollo de software, soporte TI, redes, servidores, consultoría y capacitaciones en Venezuela. Tecnología con acompañamiento real.",
+  keywords: [
+    "Innovanet",
+    "servicios TI Venezuela",
+    "desarrollo de software Venezuela",
+    "soporte técnico empresas",
+    "consultoría tecnológica",
+    "redes empresariales",
+    "servidores cloud",
+    "capacitaciones TI",
+    "innovannet",
+  ],
   whatsapp: {
     e164: "584145835937",
     display: "+58 414 5835937",

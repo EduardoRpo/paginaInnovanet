@@ -4,9 +4,16 @@ import { ServiceIcon } from "@/components/Icons";
 import { services, site } from "@/lib/site";
 
 export const metadata: Metadata = {
-  title: "Servicios",
+  title: "Servicios de TI: software, redes, servidores y consultoría",
   description:
-    "Desarrollo de software, soporte TI, redes, servidores, consultoría y capacitaciones.",
+    "Conoce los servicios de Innovanet: desarrollo de software, soporte TI, redes, servidores y cloud, consultoría tecnológica y capacitaciones en Venezuela.",
+  alternates: { canonical: "/servicios" },
+  openGraph: {
+    title: "Servicios de TI | Innovanet",
+    description:
+      "Software, soporte TI, redes, servidores, consultoría y capacitaciones para empresas.",
+    url: "/servicios",
+  },
 };
 
 export default function ServiciosPage() {

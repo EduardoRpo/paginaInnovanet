@@ -1,8 +1,13 @@
+import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import { NetworkSvg, ProductShowcase, ServiceIcon } from "@/components/Icons";
 import { Reveal } from "@/components/Reveal";
 import { processSteps, services, site } from "@/lib/site";
+
+export const metadata: Metadata = {
+  alternates: { canonical: "/" },
+};
 
 export default function HomePage() {
   return (
