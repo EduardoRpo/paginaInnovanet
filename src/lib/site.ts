@@ -28,7 +28,7 @@ export const site = {
   product: {
     name: "Asistente virtual empresarial",
     summary:
-      "Un asistente en lenguaje natural para recorrer la operación: inventario, comercial, facturación, cartera, costos y reportes, según lo que tenga activa tu empresa.",
+      "Consulta en lenguaje natural sobre inventario, comercial, facturación, cartera, costos y reportes, según los módulos y permisos de cada empresa.",
   },
   automation: {
     title: "Automatización de procesos",
@@ -56,33 +56,45 @@ export const productModules = [
     id: "asistente",
     featured: true,
     title: "Consulta en lenguaje natural",
-    text: "El asistente es la forma de usar el resto. En la misma conversación pasas de stock a cliente, ventas del mes, un PED-, una COT-, cartera y un reporte — según permisos.",
+    text: "El asistente es el punto de acceso a la operación. En una misma sesión se consultan inventario, clientes, ventas, pedidos, cotizaciones, cartera y reportes, de acuerdo con los permisos del usuario.",
     items: [
-      "Preguntas en español, no solo menús",
-      "Datos de tu empresa, no texto genérico",
-      "Paneles cuando hace falta profundizar",
+      "Consultas en lenguaje natural, además de los paneles",
+      "Respuestas con datos de la empresa, no contenido genérico",
+      "Vistas analíticas cuando se requiere mayor detalle",
     ],
   },
   {
     id: "comercial",
     featured: false,
     title: "Operación comercial",
-    text: "Clientes, ventas, pedidos y cotizaciones en un hilo, no en cinco archivos.",
-    items: ["Clientes y ventas del mes", "Pedidos PED- y pendientes", "Cotizaciones COT-"],
+    text: "Gestión unificada de clientes, ventas, pedidos y cotizaciones.",
+    items: [
+      "Clientes y ventas del período",
+      "Pedidos y seguimiento de pendientes",
+      "Historial de cotizaciones",
+    ],
   },
   {
     id: "almacen",
     featured: false,
     title: "Operación de almacén",
-    text: "Productos e inventario para saber qué hay, qué falta y a qué precio.",
-    items: ["Stock disponible y stock bajo", "Precios e inventario", "Carga y reabastecimiento"],
+    text: "Visibilidad de productos e inventario: disponibilidad, faltantes y precios.",
+    items: [
+      "Existencias y alertas de stock bajo",
+      "Precios e inventario valorizado",
+      "Carga inicial y reabastecimiento",
+    ],
   },
   {
     id: "dinero",
     featured: false,
-    title: "Dinero",
-    text: "Facturación, cuentas por cobrar, costos y reportes para decidir con números.",
-    items: ["Facturación y cartera (CxC)", "Costos e indicadores", "Reportes y comparación de períodos"],
+    title: "Finanzas y control",
+    text: "Facturación, cuentas por cobrar, estructura de costos e indicadores para la toma de decisiones.",
+    items: [
+      "Facturación y cartera (cuentas por cobrar)",
+      "Costos e indicadores de gestión",
+      "Reportes y comparación de períodos",
+    ],
   },
 ] as const;
 

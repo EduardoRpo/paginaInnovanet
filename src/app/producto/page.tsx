@@ -28,26 +28,27 @@ export default function ProductoPage() {
         <div className="container media-split">
           <div className="about-prose">
             <p>
-              No son cinco productos sueltos. Es un asistente y áreas de
-              trabajo que se activan por empresa y por usuario: comercial,
-              almacén, facturación, cartera, costos y reportes.
+              No se trata de aplicaciones independientes. Es un asistente
+              virtual con áreas de trabajo que se habilitan por empresa y por
+              usuario: comercial, almacén, facturación, cartera, costos y
+              reportes.
             </p>
             <p>
-              En el demo preguntas en español y, en la misma conversación,
-              aparecen stock, clientes, ventas, pedidos, cotizaciones y
-              números para decidir. El video es un recorte; la sesión completa
-              se arma con tus datos.
+              En la demostración se consulta en lenguaje natural y, en la misma
+              sesión, se obtienen inventario, clientes, ventas, pedidos,
+              cotizaciones e indicadores. El video es una muestra; la
+              implementación se configura con la información de cada cliente.
             </p>
             <div className="btn-row" style={{ marginTop: "0.5rem" }}>
               <a
                 className="btn btn--primary"
                 href={`${site.whatsapp.url}?text=${encodeURIComponent(
-                  `Hola Innovanet, quiero una demo de ${site.product.name}.`
+                  `Hola Innovanet, deseo agendar una demostración del ${site.product.name}.`
                 )}`}
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                Solicitar demo
+                Solicitar demostración
               </a>
               <a
                 className="btn btn--ghost"
@@ -55,7 +56,7 @@ export default function ProductoPage() {
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                Entrar si ya eres cliente
+                Acceder a la plataforma
               </a>
             </div>
           </div>
@@ -70,12 +71,12 @@ export default function ProductoPage() {
       <section className="section section--alt">
         <div className="container">
           <div className="section-head section-head--wide">
-            <span className="eyebrow">En el demo</span>
-            <h2>Una conversación, toda la operación</h2>
+            <span className="eyebrow">Capacidades</span>
+            <h2>Un canal de consulta para toda la operación</h2>
             <p>
-              El asistente es la interfaz. Lo demás son capacidades que se ven
-              juntas, según lo que tenga activa la empresa — no una tarjeta por
-              cada módulo.
+              El asistente es la interfaz. Comercial, almacén y finanzas se
+              consultan en el mismo entorno, según los módulos habilitados para
+              cada empresa.
             </p>
           </div>
           <div className="module-grid">
@@ -85,7 +86,7 @@ export default function ProductoPage() {
                 className={`module-card${mod.featured ? " module-card--featured" : ""}`}
               >
                 {mod.featured ? (
-                  <span className="eyebrow">Interfaz</span>
+                  <span className="eyebrow">Acceso</span>
                 ) : null}
                 <h3>{mod.title}</h3>
                 <p>{mod.text}</p>

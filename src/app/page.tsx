@@ -124,7 +124,7 @@ export default function HomePage() {
                 ))}
               </ul>
               <Link className="btn btn--primary" href="/producto">
-                Ver demo y módulos
+                Ver el asistente
               </Link>
             </div>
           </Reveal>
