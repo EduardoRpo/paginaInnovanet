@@ -56,6 +56,7 @@ export function JsonLd() {
     priceRange: "$$",
     areaServed: "VE",
     serviceType: [
+      "Automatización de procesos",
       "Desarrollo de software",
       "Soporte TI",
       "Redes e infraestructura",

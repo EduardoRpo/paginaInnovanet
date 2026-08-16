@@ -144,6 +144,15 @@ export function ServiceIcon({ id }: { id: string }) {
           <circle cx="14" cy="26" r="1.4" fill="currentColor" />
         </svg>
       );
+    case "automatizacion":
+      return (
+        <svg {...common}>
+          <circle cx="16" cy="24" r="5" stroke="currentColor" strokeWidth="1.7" />
+          <circle cx="32" cy="16" r="4" stroke="currentColor" strokeWidth="1.7" />
+          <circle cx="32" cy="32" r="4" stroke="currentColor" strokeWidth="1.7" />
+          <path d="M21 22l7-4M21 26l7 4" stroke="currentColor" strokeWidth="1.7" />
+        </svg>
+      );
     case "consultoria":
       return (
         <svg {...common}>

@@ -2,17 +2,17 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { PhoneVideo } from "@/components/PhoneVideo";
 import { ServiceIcon } from "@/components/Icons";
-import { services, site } from "@/lib/site";
+import { automationSignals, services, site } from "@/lib/site";
 
 export const metadata: Metadata = {
-  title: "Servicios de TI: software, redes, servidores y consultoría",
+  title: "Servicios de TI: automatización, software, redes y consultoría",
   description:
-    "Conoce los servicios de Innovanet: automatización, desarrollo de software, soporte TI, redes, servidores y cloud, consultoría tecnológica y capacitaciones en Venezuela.",
+    "Automatización de procesos, desarrollo de software, soporte TI, redes, servidores, consultoría y capacitaciones para empresas en Venezuela.",
   alternates: { canonical: "/servicios" },
   openGraph: {
     title: "Servicios de TI | Innovanet",
     description:
-      "Automatización, software, soporte TI, redes, servidores, consultoría y capacitaciones para empresas.",
+      "Automatización, software, soporte TI, redes, servidores, consultoría y capacitaciones.",
     url: "/servicios",
   },
 };
@@ -23,10 +23,10 @@ export default function ServiciosPage() {
       <header className="page-hero">
         <div className="container">
           <span className="eyebrow">Servicios</span>
-          <h1>Soluciones de TI de punta a punta</h1>
+          <h1>TI de punta a punta, con entregables claros</h1>
           <p>
-            Acompañamos a tu empresa en software, infraestructura y operación
-            diaria — con el mismo criterio técnico y de negocio.
+            Automatización, software e infraestructura — mismo criterio técnico
+            y de negocio, de diagnóstico a soporte.
           </p>
         </div>
       </header>
@@ -37,17 +37,18 @@ export default function ServiciosPage() {
             <span className="eyebrow">Automatización</span>
             <h2>{site.automation.title}</h2>
             <p>{site.automation.summary}</p>
-            <p>
-              Si copias datos a mano, tus clientes esperan demasiado o la
-              información vive en mil archivos, estás perdiendo tiempo y dinero.
-              Integramos lo que ya usas y dejamos los procesos corriendo solos.
-            </p>
-            <ul className="feature-pills">
-              <li>Menos trabajo repetitivo</li>
-              <li>Respuestas más rápidas</li>
-              <li>Datos en un solo lugar</li>
-            </ul>
-            <div className="btn-row" style={{ marginTop: "0.5rem" }}>
+            <ol className="signal-list">
+              {automationSignals.map((signal) => (
+                <li key={signal.n}>
+                  <span>{signal.n}</span>
+                  <div>
+                    <strong>{signal.title}</strong>
+                    <p>{signal.text}</p>
+                  </div>
+                </li>
+              ))}
+            </ol>
+            <div className="btn-row" style={{ marginTop: "1rem" }}>
               <a
                 className="btn btn--primary"
                 href={`${site.whatsapp.url}?text=${encodeURIComponent(
@@ -75,6 +76,12 @@ export default function ServiciosPage() {
               <ServiceIcon id={service.id} />
               <h2>{service.title}</h2>
               <p>{service.detail}</p>
+              <p className="service-detail__label">Qué incluye</p>
+              <ul className="include-list">
+                {service.includes.map((item) => (
+                  <li key={item}>{item}</li>
+                ))}
+              </ul>
             </article>
           ))}
         </div>
@@ -84,8 +91,10 @@ export default function ServiciosPage() {
         <div className="container">
           <div className="cta-block">
             <span className="eyebrow">Cotización</span>
-            <h2>¿Qué servicio necesitas hoy?</h2>
-            <p>Escríbenos y te orientamos sin compromiso.</p>
+            <h2>Dinos qué se está trabando hoy</h2>
+            <p>
+              Te orientamos con un alcance inicial, sin compromiso de compra.
+            </p>
             <div className="btn-row">
               <a
                 className="btn btn--primary"

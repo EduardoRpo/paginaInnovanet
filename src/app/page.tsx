@@ -4,7 +4,13 @@ import Link from "next/link";
 import { NetworkSvg, ServiceIcon } from "@/components/Icons";
 import { PhoneVideo } from "@/components/PhoneVideo";
 import { Reveal } from "@/components/Reveal";
-import { processSteps, services, site } from "@/lib/site";
+import {
+  processSteps,
+  productModules,
+  services,
+  site,
+  trustPills,
+} from "@/lib/site";
 
 export const metadata: Metadata = {
   alternates: { canonical: "/" },
@@ -35,9 +41,14 @@ export default function HomePage() {
             />
             <h1>{site.tagline}</h1>
             <p className="hero__lead">
-              Software, infraestructura y acompañamiento experto para empresas
-              que exigen resultados — no improvisación.
+              Software, automatización, redes y soporte para empresas que
+              exigen alcance claro y resultados — no improvisación.
             </p>
+            <ul className="trust-pills">
+              {trustPills.map((item) => (
+                <li key={item}>{item}</li>
+              ))}
+            </ul>
             <div className="btn-row">
               <a
                 className="btn btn--primary"
@@ -45,10 +56,10 @@ export default function HomePage() {
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                Hablar por WhatsApp
+                Agendar conversación
               </a>
               <Link className="btn btn--ghost" href="/servicios">
-                Ver servicios
+                Cómo trabajamos
               </Link>
             </div>
           </div>
@@ -62,12 +73,23 @@ export default function HomePage() {
           <Reveal>
             <div className="section-head section-head--wide">
               <span className="eyebrow">Servicios</span>
-              <h2>Tecnología integral, con criterio de negocio</h2>
+              <h2>Un socio para software, infraestructura y operación</h2>
               <p>
-                Un solo socio para software, redes, servidores, soporte,
-                consultoría y formación. Diseñado para equipos exigentes.
+                Automatización, desarrollo, redes, servidores, soporte,
+                consultoría y formación — con el mismo criterio técnico.
               </p>
             </div>
+          </Reveal>
+
+          <Reveal>
+            <Link href="/servicios#automatizacion" className="featured-service">
+              <div>
+                <span className="eyebrow">Destacado</span>
+                <h3>{site.automation.title}</h3>
+                <p>{site.automation.summary}</p>
+              </div>
+              <span className="featured-service__go">Ver cómo lo hacemos →</span>
+            </Link>
           </Reveal>
 
           <div className="services-grid">
@@ -97,12 +119,12 @@ export default function HomePage() {
               <h2>{site.product.name}</h2>
               <p>{site.product.summary}</p>
               <ul className="feature-pills">
-                <li>Operación clara</li>
-                <li>Acompañamiento continuo</li>
-                <li>Hecho para crecer</li>
+                {productModules.slice(0, 4).map((mod) => (
+                  <li key={mod.title}>{mod.title}</li>
+                ))}
               </ul>
               <Link className="btn btn--primary" href="/producto">
-                Conocer app
+                Ver demo y módulos
               </Link>
             </div>
           </Reveal>
@@ -122,7 +144,7 @@ export default function HomePage() {
             <div className="section-head">
               <span className="eyebrow">Método</span>
               <h2>Cómo trabajamos</h2>
-              <p>Un proceso claro, de diagnóstico a soporte, sin sorpresas.</p>
+              <p>De diagnóstico a soporte, con entregables por escrito.</p>
             </div>
           </Reveal>
 
@@ -145,10 +167,10 @@ export default function HomePage() {
           <Reveal>
             <div className="cta-block">
               <span className="eyebrow">Siguiente paso</span>
-              <h2>Hablemos de tu próximo proyecto</h2>
+              <h2>Cuéntanos el cuello de botella</h2>
               <p>
-                Cuéntanos qué necesitas. Te respondemos por WhatsApp y armamos
-                una propuesta a tu medida.
+                Respondemos por WhatsApp, armamos un diagnóstico y una propuesta
+                con alcance definido.
               </p>
               <div className="btn-row">
                 <a
@@ -160,7 +182,7 @@ export default function HomePage() {
                   WhatsApp {site.whatsapp.display}
                 </a>
                 <Link className="btn btn--ghost" href="/contacto">
-                  Ir a contacto
+                  Formulario de contacto
                 </Link>
               </div>
             </div>

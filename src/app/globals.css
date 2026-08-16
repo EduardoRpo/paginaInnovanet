@@ -503,6 +503,70 @@ select {
   animation: rise 1s cubic-bezier(0.22, 1, 0.36, 1) 0.24s both;
 }
 
+.trust-pills {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin: 0 0 1.6rem;
+  padding: 0;
+  animation: rise 1s cubic-bezier(0.22, 1, 0.36, 1) 0.2s both;
+}
+
+.trust-pills li {
+  padding: 0.38rem 0.8rem;
+  border-radius: 999px;
+  border: 1px solid var(--border);
+  color: var(--silver);
+  font-family: var(--font-display);
+  font-size: 0.78rem;
+  font-weight: 560;
+  background: rgba(255, 255, 255, 0.03);
+}
+
+.featured-service {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 1.25rem;
+  margin-bottom: 1.5rem;
+  padding: 1.5rem 1.45rem;
+  border-radius: 20px;
+  border: 1px solid rgba(0, 180, 255, 0.32);
+  background:
+    linear-gradient(120deg, rgba(0, 180, 255, 0.1), transparent 42%),
+    rgba(10, 18, 32, 0.8);
+  transition: border-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.featured-service:hover {
+  transform: translateY(-4px);
+  border-color: rgba(0, 180, 255, 0.55);
+  box-shadow: 0 18px 48px rgba(0, 0, 0, 0.3);
+}
+
+.featured-service h3 {
+  margin: 0 0 0.45rem;
+  font-family: var(--font-display);
+  font-size: 1.45rem;
+  letter-spacing: -0.03em;
+}
+
+.featured-service p {
+  margin: 0;
+  max-width: 40rem;
+  color: var(--text-muted);
+}
+
+.featured-service__go {
+  color: var(--cyan);
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 0.92rem;
+  white-space: nowrap;
+}
+
 @keyframes rise {
   from {
     opacity: 0;
@@ -1239,6 +1303,148 @@ select {
   object-fit: cover;
   border-radius: 24px;
   background: #000;
+}
+
+.phone-video__play {
+  position: absolute;
+  inset: 9px;
+  z-index: 2;
+  border: 0;
+  border-radius: 24px;
+  background: rgba(3, 7, 18, 0.28);
+  cursor: pointer;
+  display: grid;
+  place-items: center;
+}
+
+.phone-video__play span {
+  width: 68px;
+  height: 68px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #4dcfff, var(--blue));
+  box-shadow: 0 12px 36px rgba(0, 180, 255, 0.4);
+  position: relative;
+}
+
+.phone-video__play span::after {
+  content: "";
+  position: absolute;
+  left: 27px;
+  top: 22px;
+  border-style: solid;
+  border-width: 12px 0 12px 18px;
+  border-color: transparent transparent transparent #031018;
+}
+
+.phone-video__play:hover span {
+  transform: scale(1.05);
+}
+
+.phone-video__frame.is-playing video {
+  cursor: pointer;
+}
+
+.module-grid {
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: 1fr;
+}
+
+@media (min-width: 640px) {
+  .module-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 980px) {
+  .module-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.module-card {
+  padding: 1.25rem 1.2rem;
+  border-radius: 18px;
+  border: 1px solid var(--border);
+  background: rgba(10, 18, 32, 0.55);
+}
+
+.module-card h3 {
+  margin: 0 0 0.45rem;
+  font-family: var(--font-display);
+  font-size: 1.12rem;
+  letter-spacing: -0.02em;
+}
+
+.module-card p {
+  margin: 0;
+  color: var(--text-muted);
+  font-size: 0.95rem;
+}
+
+.signal-list {
+  list-style: none;
+  margin: 1.1rem 0 0;
+  padding: 0;
+  display: grid;
+  gap: 0.85rem;
+}
+
+.signal-list li {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 0.85rem;
+  align-items: start;
+}
+
+.signal-list span {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 2.1rem;
+  height: 2.1rem;
+  border-radius: 999px;
+  border: 1px solid rgba(0, 180, 255, 0.35);
+  background: rgba(0, 180, 255, 0.1);
+  font-family: var(--font-display);
+  font-size: 0.78rem;
+  font-weight: 650;
+  color: var(--cyan);
+}
+
+.signal-list strong {
+  display: block;
+  font-family: var(--font-display);
+  font-size: 0.98rem;
+  margin-bottom: 0.15rem;
+}
+
+.signal-list p {
+  margin: 0;
+  color: var(--text-muted);
+  font-size: 0.92rem;
+}
+
+.service-detail__label {
+  margin: 1rem 0 0.45rem !important;
+  color: var(--cyan) !important;
+  font-family: var(--font-display);
+  font-size: 0.75rem !important;
+  font-weight: 650;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.include-list {
+  margin: 0;
+  padding-left: 1.1rem;
+  color: var(--text-muted);
+  display: grid;
+  gap: 0.3rem;
+}
+
+.include-list li {
+  padding-left: 0.15rem;
 }
 
 .media-split h2 {

@@ -19,10 +19,10 @@ export default function NosotrosPage() {
       <header className="page-hero">
         <div className="container">
           <span className="eyebrow">Nosotros</span>
-          <h1>{site.legalName}</h1>
+          <h1>Innovanet</h1>
           <p>
-            Somos un socio tecnológico para empresas que necesitan resultados,
-            no solo herramientas.
+            {site.legalName}. Socio tecnológico para empresas que necesitan
+            resultados, no solo herramientas.
           </p>
         </div>
       </header>

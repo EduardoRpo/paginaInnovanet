@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Innovanet — Hoy vs propuesta</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --bg: #030712;
+      --text: #f4f7fb;
+      --muted: #9aa6b8;
+      --cyan: #00b4ff;
+      --blue: #1a6dff;
+      --border: rgba(201, 208, 218, 0.12);
+      --card: rgba(10, 18, 32, 0.75);
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--text);
+      font-family: Manrope, system-ui, sans-serif;
+      line-height: 1.55;
+    }
+    h1, h2, h3, .ey { font-family: "Space Grotesk", system-ui, sans-serif; }
+    .wrap { width: min(100% - 2rem, 1180px); margin: 0 auto; }
+    .intro { padding: 2.5rem 0 1.5rem; }
+    .intro h1 { font-size: clamp(1.8rem, 4vw, 2.6rem); letter-spacing: -0.04em; margin: 0 0 0.6rem; }
+    .intro p { color: var(--muted); max-width: 46rem; margin: 0; }
+    .tabs { display: flex; gap: 0.5rem; flex-wrap: wrap; margin: 1.5rem 0 2rem; }
+    .tabs a {
+      color: var(--muted);
+      text-decoration: none;
+      border: 1px solid var(--border);
+      border-radius: 999px;
+      padding: 0.4rem 0.9rem;
+      font-size: 0.88rem;
+    }
+    .tabs a:hover { color: #fff; border-color: var(--cyan); }
+    .pair { display: grid; gap: 1rem; margin-bottom: 3.5rem; }
+    @media (min-width: 900px) { .pair { grid-template-columns: 1fr 1fr; } }
+    .col {
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      overflow: hidden;
+      background: #07111f;
+    }
+    .col__tag {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0.7rem 1rem;
+      border-bottom: 1px solid var(--border);
+      font-size: 0.75rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--cyan);
+    }
+    .col--new .col__tag { background: rgba(0, 180, 255, 0.08); }
+    .screen { padding: 1.1rem 1.15rem 1.3rem; font-size: 0.82rem; }
+    .navrow { display: flex; justify-content: space-between; color: var(--muted); font-size: 0.72rem; margin-bottom: 1rem; }
+    .ey { color: var(--cyan); font-size: 0.68rem; letter-spacing: 0.12em; text-transform: uppercase; }
+    .screen h2 { margin: 0.25rem 0 0.45rem; font-size: 1.15rem; letter-spacing: -0.03em; line-height: 1.15; }
+    .screen p { margin: 0 0 0.7rem; color: var(--muted); }
+    .btns { display: flex; gap: 0.4rem; flex-wrap: wrap; margin: 0.6rem 0 0.9rem; }
+    .b {
+      border-radius: 999px;
+      padding: 0.38rem 0.75rem;
+      font-size: 0.72rem;
+      font-weight: 600;
+    }
+    .b1 { background: linear-gradient(180deg, #2a7bff, #0047c7); }
+    .b2 { border: 1px solid var(--border); color: var(--muted); }
+    .pills { display: flex; flex-wrap: wrap; gap: 0.3rem; margin: 0.5rem 0; }
+    .pills span, .chip {
+      border: 1px solid var(--border);
+      border-radius: 999px;
+      padding: 0.18rem 0.5rem;
+      font-size: 0.68rem;
+      color: #c9d0da;
+    }
+    .grid3 { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 0.4rem; }
+    .card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 0.5rem;
+      min-height: 3.4rem;
+    }
+    .card strong { display: block; font-size: 0.72rem; margin-bottom: 0.15rem; }
+    .card em { font-style: normal; color: var(--muted); font-size: 0.65rem; }
+    .phone {
+      width: 92px;
+      height: 164px;
+      margin: 0.4rem auto 0.2rem;
+      border-radius: 16px;
+      border: 1px solid rgba(0, 180, 255, 0.35);
+      background: #0a1220;
+      position: relative;
+      overflow: hidden;
+    }
+    .phone .bar {
+      position: absolute;
+      left: 6px; right: 6px; bottom: 8px;
+      height: 14px;
+      border-radius: 4px;
+      background: #1a2333;
+      opacity: 0.95;
+    }
+    .phone .play {
+      position: absolute;
+      inset: 0;
+      margin: auto;
+      width: 36px; height: 36px;
+      border-radius: 50%;
+      background: rgba(0, 180, 255, 0.85);
+    }
+    .phone .play::after {
+      content: "";
+      position: absolute;
+      left: 14px; top: 11px;
+      border-style: solid;
+      border-width: 7px 0 7px 11px;
+      border-color: transparent transparent transparent #031018;
+    }
+    .split { display: grid; grid-template-columns: 1.1fr 0.9fr; gap: 0.7rem; align-items: start; }
+    .note { color: var(--muted); font-size: 0.78rem; padding-bottom: 3rem; }
+    ul.del { margin: 0; padding-left: 1rem; color: var(--muted); font-size: 0.68rem; }
+    .hl { border-color: rgba(0, 180, 255, 0.45); box-shadow: 0 0 0 1px rgba(0, 180, 255, 0.15); }
+  </style>
+</head>
+<body>
+  <div class="wrap intro">
+    <p class="ey">Mockup de dirección — no es código en producción</p>
+    <h1>Hoy vs. propuesta</h1>
+    <p>
+      Misma marca (fondo noche, cian, WhatsApp). El salto no es “más azul”: es prueba,
+      módulos concretos y un reproductor limpio. Los PNG de arriba son atmósfera;
+      este HTML sigue el layout real de Innovanet.
+    </p>
+    <div class="tabs">
+      <a href="#inicio">Inicio</a>
+      <a href="#producto">Producto</a>
+      <a href="#servicios">Servicios</a>
+    </div>
+  </div>
+
+  <div class="wrap" id="inicio">
+    <div class="pair">
+      <article class="col">
+        <div class="col__tag"><span>Hoy — Inicio</span><span>Logo + eslogan</span></div>
+        <div class="screen">
+          <div class="navrow"><span>INNOVANET</span><span>Inicio Servicios Producto · Cotizar</span></div>
+          <p class="ey">Hero a pantalla completa</p>
+          <h2>Tu socio tecnológico para crecer</h2>
+          <p>Software, infraestructura y acompañamiento… no improvisación.</p>
+          <div class="btns"><span class="b b1">Hablar por WhatsApp</span><span class="b b2">Ver servicios</span></div>
+          <p class="ey">6 tarjetas iguales</p>
+          <div class="grid3">
+            <div class="card"><strong>Software</strong><em>A la medida</em></div>
+            <div class="card"><strong>Soporte</strong><em>Que no se detenga</em></div>
+            <div class="card"><strong>Redes</strong><em>Estable</em></div>
+            <div class="card"><strong>Servidores</strong><em>Cloud</em></div>
+            <div class="card"><strong>Consultoría</strong><em>Roadmap</em></div>
+            <div class="card"><strong>Capacitaciones</strong><em>Talleres</em></div>
+          </div>
+          <p class="ey" style="margin-top:0.8rem">Producto = video con controles nativos</p>
+          <div class="phone"><div class="bar"></div></div>
+          <p>Pills genéricas: operación clara · acompañamiento · hecho para crecer</p>
+        </div>
+      </article>
+      <article class="col col--new">
+        <div class="col__tag"><span>Propuesta — Inicio</span><span>Prueba + foco</span></div>
+        <div class="screen">
+          <div class="navrow"><span>INNOVANET</span><span>Inicio Servicios Producto · Cotizar</span></div>
+          <div class="split">
+            <div>
+              <p class="ey">Para empresas exigentes</p>
+              <h2>Tecnología que ordena la operación — no la complica</h2>
+              <p>Software, redes, servidores y automatización, con alcance por escrito y soporte después del go-live.</p>
+              <div class="pills">
+                <span>Diagnóstico claro</span>
+                <span>Tiempos de respuesta</span>
+                <span>Un solo socio</span>
+              </div>
+              <div class="btns"><span class="b b1">Agendar conversación</span><span class="b b2">Ver cómo trabajamos</span></div>
+            </div>
+            <div>
+              <div class="phone" style="width:100%;height:150px;border-radius:14px"><div class="play"></div></div>
+              <p style="text-align:center;font-size:0.65rem">Play grande, sin barra del navegador</p>
+            </div>
+          </div>
+          <p class="ey">Franja de confianza</p>
+          <div class="pills">
+            <span>Automatización</span><span>Plataforma comercial</span><span>Infraestructura</span><span>Soporte continuo</span>
+          </div>
+          <p class="ey">Servicios: 5 + Automatización destacada</p>
+          <div class="card hl" style="margin-bottom:0.4rem"><strong>Automatización de procesos</strong><em>Dejar de copiar datos a mano · clientes más rápidos · un solo lugar para la info</em></div>
+          <div class="grid3">
+            <div class="card"><strong>Software</strong></div>
+            <div class="card"><strong>Soporte</strong></div>
+            <div class="card"><strong>Redes</strong></div>
+            <div class="card"><strong>Servidores</strong></div>
+            <div class="card"><strong>Consultoría</strong></div>
+            <div class="card"><strong>Capacitaciones</strong></div>
+          </div>
+        </div>
+      </article>
+    </div>
+  </div>
+
+  <div class="wrap" id="producto">
+    <div class="pair">
+      <article class="col">
+        <div class="col__tag"><span>Hoy — Producto</span><span>Una columna + video</span></div>
+        <div class="screen">
+          <h2>Plataforma Innovanet</h2>
+          <p>Párrafo genérico + “mira el video” + 3 pills. Poco que escanear.</p>
+          <div class="split">
+            <div>
+              <div class="pills"><span>Área comercial</span><span>Asistente</span><span>Demo</span></div>
+              <div class="btns"><span class="b b1">Entrar a la plataforma</span><span class="b b2">WhatsApp</span></div>
+            </div>
+            <div class="phone"><div class="bar"></div></div>
+          </div>
+        </div>
+      </article>
+      <article class="col col--new">
+        <div class="col__tag"><span>Propuesta — Producto</span><span>Módulos reales</span></div>
+        <div class="screen">
+          <h2>Control del área comercial, en lenguaje natural</h2>
+          <p>Clientes, pedidos, cotizaciones y reportes. Preguntas como “¿cuántas ventas hay este mes?”.</p>
+          <div class="split">
+            <div>
+              <div class="grid3" style="grid-template-columns:1fr 1fr">
+                <div class="card"><strong>Comercial</strong><em>Búsqueda inteligente</em></div>
+                <div class="card"><strong>Asistente</strong><em>Consultas en chat</em></div>
+                <div class="card"><strong>Pedidos PED-</strong><em>Estado y pendientes</em></div>
+                <div class="card"><strong>Cotizaciones COT-</strong><em>Historial por cliente</em></div>
+              </div>
+              <div class="btns"><span class="b b1">Solicitar demo</span><span class="b b2">Entrar si ya eres cliente</span></div>
+            </div>
+            <div class="phone"><div class="play"></div></div>
+          </div>
+        </div>
+      </article>
+    </div>
+  </div>
+
+  <div class="wrap" id="servicios">
+    <div class="pair">
+      <article class="col">
+        <div class="col__tag"><span>Hoy — Servicios</span><span>Párrafos similares</span></div>
+        <div class="screen">
+          <h2>Automatización + lista de 6 artículos</h2>
+          <div class="split">
+            <p>Texto de dolor + un botón WhatsApp. El video trae controles nativos.</p>
+            <div class="phone"><div class="bar"></div></div>
+          </div>
+          <div class="card" style="margin-top:0.5rem"><strong>Desarrollo de software</strong><em>Un párrafo. Sin entregable.</em></div>
+          <div class="card" style="margin-top:0.35rem"><strong>Soporte TI</strong><em>Otro párrafo casi igual de largo.</em></div>
+          <div class="card" style="margin-top:0.35rem"><strong>Redes…</strong><em>Se siente catálogo, no propuesta.</em></div>
+        </div>
+      </article>
+      <article class="col col--new">
+        <div class="col__tag"><span>Propuesta — Servicios</span><span>Dolor + entregable</span></div>
+        <div class="screen">
+          <h2>Tres señales de que hay que automatizar</h2>
+          <div class="split">
+            <ul class="del">
+              <li>Copias datos una y otra vez</li>
+              <li>Tus clientes esperan demasiado</li>
+              <li>La información está en todos lados</li>
+            </ul>
+            <div class="phone"><div class="play"></div></div>
+          </div>
+          <div class="card hl" style="margin-top:0.6rem">
+            <strong>Soporte TI — qué incluye</strong>
+            <ul class="del">
+              <li>Mesa de ayuda con tiempos acordados</li>
+              <li>Preventivo + correctivo</li>
+              <li>Reporte mensual de incidentes</li>
+            </ul>
+          </div>
+          <p style="margin-top:0.6rem">Cada servicio: 3 entregables, no un párrafo abstracto.</p>
+        </div>
+      </article>
+    </div>
+    <p class="note">
+      Archivos: <code>docs/mockups/comparacion-inicio.png</code>,
+      <code>comparacion-producto-servicios.png</code> y este HTML.
+      Abrir el HTML en el navegador para recorrerlo. Nada de esto está aplicado al sitio todavía.
+    </p>
+  </div>
+</body>
+</html>

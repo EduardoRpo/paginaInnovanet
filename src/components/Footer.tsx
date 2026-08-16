@@ -27,6 +27,9 @@ export function Footer() {
         <div>
           <h3>Servicios</h3>
           <ul>
+            <li>
+              <Link href="/servicios#automatizacion">Automatización</Link>
+            </li>
             {services.slice(0, 4).map((s) => (
               <li key={s.id}>
                 <Link href={`/servicios#${s.id}`}>{s.title}</Link>

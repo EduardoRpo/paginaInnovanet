@@ -1,9 +1,9 @@
 import type { Metadata } from "next";
 import { PhoneVideo } from "@/components/PhoneVideo";
-import { site } from "@/lib/site";
+import { productModules, site } from "@/lib/site";
 
 export const metadata: Metadata = {
-  title: `${site.product.name} | Software empresarial`,
+  title: `${site.product.name} | Software comercial`,
   description: site.product.summary,
   alternates: { canonical: "/producto" },
   openGraph: {
@@ -28,39 +28,32 @@ export default function ProductoPage() {
         <div className="container media-split">
           <div className="about-prose">
             <p>
-              Además de nuestros servicios de TI, ofrecemos una línea de producto
-              propia: una plataforma para dar control al área comercial —
-              clientes, pedidos, cotizaciones y reportes, con un asistente
-              virtual que responde en lenguaje natural.
+              Es una plataforma propia para el área comercial: consultas de
+              ventas, clientes y pedidos sin saltar entre archivos. El asistente
+              entiende preguntas en español, no solo menús.
             </p>
             <p>
-              Mira el video: es una demo real de búsqueda inteligente, ventas y
-              consultas rápidas. Si quieres ver módulos a medida, agenda una
-              conversación con el equipo.
+              El video es una demo real. Si encaja con tu operación, agendamos
+              una sesión con tus datos y módulos.
             </p>
-            <ul className="feature-pills">
-              <li>Área comercial</li>
-              <li>Asistente virtual</li>
-              <li>Demo personalizada</li>
-            </ul>
             <div className="btn-row" style={{ marginTop: "0.5rem" }}>
               <a
                 className="btn btn--primary"
-                href={site.appUrl}
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                Entrar a la plataforma
-              </a>
-              <a
-                className="btn btn--ghost"
                 href={`${site.whatsapp.url}?text=${encodeURIComponent(
-                  `Hola Innovanet, me interesa conocer más sobre ${site.product.name}.`
+                  `Hola Innovanet, quiero una demo de ${site.product.name}.`
                 )}`}
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                Solicitar demo por WhatsApp
+                Solicitar demo
+              </a>
+              <a
+                className="btn btn--ghost"
+                href={site.appUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Entrar si ya eres cliente
               </a>
             </div>
           </div>
@@ -69,6 +62,24 @@ export default function ProductoPage() {
             poster="/videos/plataforma-innovanet.jpg"
             title={`Demo de ${site.product.name}`}
           />
+        </div>
+      </section>
+
+      <section className="section section--alt">
+        <div className="container">
+          <div className="section-head">
+            <span className="eyebrow">Módulos</span>
+            <h2>Lo que ves en la demo</h2>
+            <p>Capacidades concretas de la plataforma, no promesas genéricas.</p>
+          </div>
+          <div className="module-grid">
+            {productModules.map((mod) => (
+              <article key={mod.title} className="module-card">
+                <h3>{mod.title}</h3>
+                <p>{mod.text}</p>
+              </article>
+            ))}
+          </div>
         </div>
       </section>
     </>
