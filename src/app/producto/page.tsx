@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { ProductShowcase } from "@/components/Icons";
+import { PhoneVideo } from "@/components/PhoneVideo";
 import { site } from "@/lib/site";
 
 export const metadata: Metadata = {
@@ -25,21 +25,23 @@ export default function ProductoPage() {
       </header>
 
       <section className="section">
-        <div className="container contact-grid">
+        <div className="container media-split">
           <div className="about-prose">
             <p>
               Además de nuestros servicios de TI, ofrecemos una línea de producto
-              propia: una plataforma pensada para dar control, claridad y
-              acompañamiento a la operación de tu negocio.
+              propia: una plataforma para dar control al área comercial —
+              clientes, pedidos, cotizaciones y reportes, con un asistente
+              virtual que responde en lenguaje natural.
             </p>
             <p>
-              Si quieres ver una demo, conocer módulos o evaluar si encaja con tu
-              empresa, agenda una conversación con nuestro equipo.
+              Mira el video: es una demo real de búsqueda inteligente, ventas y
+              consultas rápidas. Si quieres ver módulos a medida, agenda una
+              conversación con el equipo.
             </p>
             <ul className="feature-pills">
+              <li>Área comercial</li>
+              <li>Asistente virtual</li>
               <li>Demo personalizada</li>
-              <li>Implementación guiada</li>
-              <li>Soporte continuo</li>
             </ul>
             <div className="btn-row" style={{ marginTop: "0.5rem" }}>
               <a
@@ -62,7 +64,11 @@ export default function ProductoPage() {
               </a>
             </div>
           </div>
-          <ProductShowcase />
+          <PhoneVideo
+            src="/videos/plataforma-innovanet.mp4"
+            poster="/videos/plataforma-innovanet.jpg"
+            title={`Demo de ${site.product.name}`}
+          />
         </div>
       </section>
     </>

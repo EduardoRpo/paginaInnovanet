@@ -1,7 +1,8 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
-import { NetworkSvg, ProductShowcase, ServiceIcon } from "@/components/Icons";
+import { NetworkSvg, ServiceIcon } from "@/components/Icons";
+import { PhoneVideo } from "@/components/PhoneVideo";
 import { Reveal } from "@/components/Reveal";
 import { processSteps, services, site } from "@/lib/site";
 
@@ -106,7 +107,11 @@ export default function HomePage() {
             </div>
           </Reveal>
           <Reveal delay={120}>
-            <ProductShowcase />
+            <PhoneVideo
+              src="/videos/plataforma-innovanet.mp4"
+              poster="/videos/plataforma-innovanet.jpg"
+              title={`Demo de ${site.product.name}`}
+            />
           </Reveal>
         </div>
       </section>

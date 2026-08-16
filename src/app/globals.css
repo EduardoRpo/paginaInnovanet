@@ -1201,6 +1201,67 @@ select {
   justify-content: space-between;
 }
 
+/* Vertical product / service reels */
+.phone-video {
+  position: relative;
+  display: grid;
+  place-items: center;
+}
+
+.phone-video__glow {
+  position: absolute;
+  width: 72%;
+  height: 62%;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(0, 180, 255, 0.28), transparent 70%);
+  filter: blur(22px);
+  pointer-events: none;
+}
+
+.phone-video__frame {
+  position: relative;
+  z-index: 1;
+  width: min(100%, 300px);
+  aspect-ratio: 9 / 16;
+  padding: 9px;
+  border-radius: 32px;
+  border: 1px solid rgba(0, 180, 255, 0.28);
+  background: linear-gradient(160deg, #121a2c, #070c16);
+  box-shadow:
+    0 28px 70px rgba(0, 0, 0, 0.5),
+    0 0 50px rgba(0, 180, 255, 0.12);
+}
+
+.phone-video__frame video {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 24px;
+  background: #000;
+}
+
+.media-split h2 {
+  margin: 0 0 0.85rem;
+  font-family: var(--font-display);
+  font-size: clamp(1.7rem, 3.2vw, 2.25rem);
+  letter-spacing: -0.03em;
+  line-height: 1.1;
+}
+
+.media-split {
+  display: grid;
+  gap: 2.5rem;
+  align-items: center;
+}
+
+@media (min-width: 860px) {
+  .media-split {
+    grid-template-columns: 1.05fr 0.85fr;
+    gap: 3rem;
+  }
+}
+
 @media (prefers-reduced-motion: reduce) {
   *,
   *::before,

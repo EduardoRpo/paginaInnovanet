@@ -29,6 +29,11 @@ export const site = {
     summary:
       "Nuestra aplicación para organizar y potenciar la operación de tu negocio con herramientas claras y acompañamiento experto.",
   },
+  automation: {
+    title: "Automatización de procesos",
+    summary:
+      "Eliminamos copiar y pegar, esperas innecesarias y datos dispersos. Conectamos tus sistemas para que la operación fluya sola.",
+  },
 } as const;
 
 export const navLinks = [
