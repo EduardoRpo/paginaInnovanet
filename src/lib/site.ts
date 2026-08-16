@@ -26,9 +26,9 @@ export const site = {
   },
   email: "administracion@innovannet.com",
   product: {
-    name: "Plataforma Innovanet",
+    name: "Asistente virtual empresarial",
     summary:
-      "Control del área comercial en un solo lugar: clientes, pedidos, cotizaciones y reportes, con un asistente que responde en lenguaje natural.",
+      "Un asistente en lenguaje natural para recorrer la operación: inventario, comercial, facturación, cartera, costos y reportes, según lo que tenga activa tu empresa.",
   },
   automation: {
     title: "Automatización de procesos",
@@ -53,24 +53,36 @@ export const trustPills = [
 
 export const productModules = [
   {
-    title: "Área comercial",
-    text: "Búsqueda inteligente: stock, clientes y ventas en lenguaje natural.",
+    id: "asistente",
+    featured: true,
+    title: "Consulta en lenguaje natural",
+    text: "El asistente es la forma de usar el resto. En la misma conversación pasas de stock a cliente, ventas del mes, un PED-, una COT-, cartera y un reporte — según permisos.",
+    items: [
+      "Preguntas en español, no solo menús",
+      "Datos de tu empresa, no texto genérico",
+      "Paneles cuando hace falta profundizar",
+    ],
   },
   {
-    title: "Asistente virtual",
-    text: "Preguntas como “¿cuántas ventas hay este mes?” y consultas rápidas.",
+    id: "comercial",
+    featured: false,
+    title: "Operación comercial",
+    text: "Clientes, ventas, pedidos y cotizaciones en un hilo, no en cinco archivos.",
+    items: ["Clientes y ventas del mes", "Pedidos PED- y pendientes", "Cotizaciones COT-"],
   },
   {
-    title: "Pedidos",
-    text: "Seguimiento de PED-, pendientes y estado de cada orden.",
+    id: "almacen",
+    featured: false,
+    title: "Operación de almacén",
+    text: "Productos e inventario para saber qué hay, qué falta y a qué precio.",
+    items: ["Stock disponible y stock bajo", "Precios e inventario", "Carga y reabastecimiento"],
   },
   {
-    title: "Cotizaciones",
-    text: "Historial COT- por cliente, sin buscar en hojas sueltas.",
-  },
-  {
-    title: "Reportes",
-    text: "Resumen de ventas del mes y totales, listo para decidir.",
+    id: "dinero",
+    featured: false,
+    title: "Dinero",
+    text: "Facturación, cuentas por cobrar, costos y reportes para decidir con números.",
+    items: ["Facturación y cartera (CxC)", "Costos e indicadores", "Reportes y comparación de períodos"],
   },
 ] as const;
 

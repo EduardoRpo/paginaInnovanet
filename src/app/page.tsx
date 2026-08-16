@@ -119,8 +119,8 @@ export default function HomePage() {
               <h2>{site.product.name}</h2>
               <p>{site.product.summary}</p>
               <ul className="feature-pills">
-                {productModules.slice(0, 4).map((mod) => (
-                  <li key={mod.title}>{mod.title}</li>
+                {productModules.map((mod) => (
+                  <li key={mod.id}>{mod.title}</li>
                 ))}
               </ul>
               <Link className="btn btn--primary" href="/producto">

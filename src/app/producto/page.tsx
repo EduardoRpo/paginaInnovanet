@@ -3,7 +3,7 @@ import { PhoneVideo } from "@/components/PhoneVideo";
 import { productModules, site } from "@/lib/site";
 
 export const metadata: Metadata = {
-  title: `${site.product.name} | Software comercial`,
+  title: `${site.product.name} | Operación en lenguaje natural`,
   description: site.product.summary,
   alternates: { canonical: "/producto" },
   openGraph: {
@@ -28,13 +28,15 @@ export default function ProductoPage() {
         <div className="container media-split">
           <div className="about-prose">
             <p>
-              Es una plataforma propia para el área comercial: consultas de
-              ventas, clientes y pedidos sin saltar entre archivos. El asistente
-              entiende preguntas en español, no solo menús.
+              No son cinco productos sueltos. Es un asistente y áreas de
+              trabajo que se activan por empresa y por usuario: comercial,
+              almacén, facturación, cartera, costos y reportes.
             </p>
             <p>
-              El video es una demo real. Si encaja con tu operación, agendamos
-              una sesión con tus datos y módulos.
+              En el demo preguntas en español y, en la misma conversación,
+              aparecen stock, clientes, ventas, pedidos, cotizaciones y
+              números para decidir. El video es un recorte; la sesión completa
+              se arma con tus datos.
             </p>
             <div className="btn-row" style={{ marginTop: "0.5rem" }}>
               <a
@@ -67,16 +69,31 @@ export default function ProductoPage() {
 
       <section className="section section--alt">
         <div className="container">
-          <div className="section-head">
-            <span className="eyebrow">Módulos</span>
-            <h2>Lo que ves en la demo</h2>
-            <p>Capacidades concretas de la plataforma, no promesas genéricas.</p>
+          <div className="section-head section-head--wide">
+            <span className="eyebrow">En el demo</span>
+            <h2>Una conversación, toda la operación</h2>
+            <p>
+              El asistente es la interfaz. Lo demás son capacidades que se ven
+              juntas, según lo que tenga activa la empresa — no una tarjeta por
+              cada módulo.
+            </p>
           </div>
           <div className="module-grid">
             {productModules.map((mod) => (
-              <article key={mod.title} className="module-card">
+              <article
+                key={mod.id}
+                className={`module-card${mod.featured ? " module-card--featured" : ""}`}
+              >
+                {mod.featured ? (
+                  <span className="eyebrow">Interfaz</span>
+                ) : null}
                 <h3>{mod.title}</h3>
                 <p>{mod.text}</p>
+                <ul className="include-list">
+                  {mod.items.map((item) => (
+                    <li key={item}>{item}</li>
+                  ))}
+                </ul>
               </article>
             ))}
           </div>

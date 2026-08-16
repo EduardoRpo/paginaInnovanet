@@ -1377,9 +1377,26 @@ select {
 }
 
 .module-card p {
-  margin: 0;
+  margin: 0 0 0.85rem;
   color: var(--text-muted);
   font-size: 0.95rem;
+}
+
+.module-card--featured {
+  border-color: rgba(0, 180, 255, 0.35);
+  background:
+    linear-gradient(120deg, rgba(0, 180, 255, 0.1), transparent 50%),
+    rgba(10, 18, 32, 0.75);
+}
+
+@media (min-width: 640px) {
+  .module-card--featured {
+    grid-column: 1 / -1;
+  }
+}
+
+.module-card .include-list {
+  margin-top: 0.15rem;
 }
 
 .signal-list {
